@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    tools:context="com.example.usuari.presupuesto.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+
+            <RadioGroup
+                android:id="@+id/rgmemoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/rd8"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:text="8 GB"
+                    app:layout_constraintBottom_toTopOf="@+id/chkImpresora"
+                    app:layout_constraintEnd_toStartOf="@+id/rd16"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/rd16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:text="16 GB"
+                    app:layout_constraintBottom_toTopOf="@+id/chkImpresora"
+                    app:layout_constraintEnd_toStartOf="@+id/rd32"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/rd8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioButton
+                    android:id="@+id/rd32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:text="32 GB"
+                    app:layout_constraintBottom_toTopOf="@+id/chkImpresora"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/rd16"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/radios"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/checks"
+                android:layout_width="374dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/chkImpresora"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:text="Impresora"
+                    app:layout_constraintBottom_toTopOf="@+id/chkMonitor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rd8" />
+
+                <CheckBox
+                    android:id="@+id/chkMonitor"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:text="Monitor 27"
+                    app:layout_constraintBottom_toTopOf="@+id/fecha"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chkImpresora" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:onClick="fecha"
+                    android:text="Fecha envio"
+                    app:layout_constraintBottom_toTopOf="@+id/tvShow"
+                    app:layout_constraintEnd_toStartOf="@+id/btnpres"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chkMonitor" />
+
+                <Button
+                    android:id="@+id/btnpres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:onClick="calcular"
+                    android:text="presuesto"
+                    app:layout_constraintBottom_toTopOf="@+id/tvShow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/fecha"
+                    app:layout_constraintTop_toBottomOf="@+id/chkMonitor" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvShow"
+                android:layout_width="313dp"
+                android:layout_height="44dp"
+                android:text="Hello World!"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.683" />
+        </TableRow>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
